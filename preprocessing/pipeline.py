@@ -167,7 +167,7 @@ parser.add_argument("--jobs",
 parser.add_argument("--output_dir",
                     help="output dir for the pipeline",
                     type=str,
-                    default=os.path.join('output', str(int(time.time()))))
+                    default='output/data')
 parser.add_argument('--start',
                     help='start position within projects list',
                     type=int,
