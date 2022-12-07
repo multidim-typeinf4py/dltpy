@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 from functools import reduce
 from typing import Optional
 
-from preprocessing.extractor import Function
+import extractor
 import re
 import nltk
 
@@ -16,11 +16,11 @@ all_cap_regex = re.compile('([a-z0-9])([A-Z])')
 
 
 class NLPreprocessor:
-    def preprocess(self, function: Function) -> Function:
+    def preprocess(self, function: extractor.Function) -> extractor.Function:
         """
         Preprocess a function's comments and identifiers by removing punctuating, removing stopwords and lemmatization
         """
-        return Function(
+        return extractor.Function(
             name=self.process_identifier(function.name),
             docstring=self.process_sentence(function.docstring),
             func_descr=self.process_sentence(function.func_descr),
