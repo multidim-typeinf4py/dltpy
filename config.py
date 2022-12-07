@@ -1,6 +1,7 @@
 import os
 
 PROJECT_ROOT = os.path.dirname(__file__)
+print(f"{PROJECT_ROOT=}")
 OUTPUT_DIRECTORY_TOPLEVEL = os.path.join('../output')
 VECTOR_OUTPUT_DIRECTORY = '../output/vectors'
 DATA_FILES_DIR = os.path.join(PROJECT_ROOT, "output/data/")
@@ -15,7 +16,7 @@ FILTERED_DATA_FILE = os.path.join(ML_INPUTS_PATH, "_data_filtered.csv")
 W2V_VEC_LENGTH = 14
 NUMBER_OF_TYPES = 1000
 
-OUTPUT_EMBEDDINGS_DIRECTORY = '.,/resources'
+OUTPUT_EMBEDDINGS_DIRECTORY = '../resources'
 W2V_MODEL_CODE_DIR = os.path.join(OUTPUT_EMBEDDINGS_DIRECTORY, 'w2v_code_model.bin')
 W2V_MODEL_LANGUAGE_DIR = os.path.join(OUTPUT_EMBEDDINGS_DIRECTORY, 'w2v_language_model.bin')
 
