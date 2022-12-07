@@ -3,6 +3,9 @@ import pandas as pd
 import multiprocessing
 import os
 from time import time
+import sys
+import os
+sys.path.append("../")
 import config
 
 

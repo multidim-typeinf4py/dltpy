@@ -11,6 +11,9 @@ from torch.utils import data
 from torch.utils.data import DataLoader
 from typing import Tuple
 
+import sys
+import os
+sys.path.append("../")
 import config
 
 

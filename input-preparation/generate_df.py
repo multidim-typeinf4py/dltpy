@@ -12,6 +12,9 @@ from sklearn.preprocessing import LabelEncoder
 
 from ast import literal_eval
 
+import sys
+import os
+sys.path.append("../")
 import config
 
 # LOCAL CONFIG

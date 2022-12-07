@@ -8,6 +8,9 @@ import os
 
 from pandas import Series
 
+import sys
+import os
+sys.path.append("../")
 import config
 
 w2v_models = {
