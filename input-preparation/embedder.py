@@ -74,18 +74,18 @@ class Embedder:
 
         w2v_model = Word2Vec(min_count=5,
                              window=5,
-                             size=config.W2V_VEC_LENGTH,
+                             vector_size=config.W2V_VEC_LENGTH,
                              workers=cores-1)
 
         t = time()
 
-        w2v_model.build_vocab(sentences=corpus_iterator)
+        w2v_model.build_vocab(corpus_iterator)
 
         print('Time to build vocab: {} mins'.format(round((time() - t) / 60, 2)))
 
         t = time()
 
-        w2v_model.train(sentences=corpus_iterator,
+        w2v_model.train(corpus_iterator,
                         total_examples=w2v_model.corpus_count,
                         epochs=20,
                         report_delay=1)
@@ -129,8 +129,8 @@ if __name__ == '__main__':
     print("W2V code model total amount of words : " + str(w2v_code_model.corpus_total_words))
     print(" ")
     print("Top 20 words for language model:")
-    print(w2v_language_model.wv.index2entity[:20])
+    print(w2v_language_model.wv.index_to_key[:20])
     print("\n Top 20 words for code model:")
-    print(w2v_code_model.wv.index2entity[:20])
+    print(w2v_code_model.wv.index_to_key[:20])
 
 

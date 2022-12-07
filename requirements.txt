@@ -6,6 +6,6 @@ gitpython
 docstring-parser==0.3
 joblib==1.2.0
 tqdm==4.31.1
-gensim==3.8.0
+gensim==4.2.0
 torch
 torchvision
