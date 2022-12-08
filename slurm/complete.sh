@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 ## Logging
-# SBATCH --job-name=dltpy-training
-# SBATCH --output=slurm-runs/training.txt
-# SBATCH --mail-user=benjamin.sparks@stud.uni-heidelberg.de
+#SBATCH --job-name=dltpy-training
+#SBATCH --output=slurm-runs/training.txt
+#SBATCH --mail-user=benjamin.sparks@stud.uni-heidelberg.de
 
 ## Resources
-# SBATCH --nodes=count 8
-# SBATCH --gres=gpu:1
-# SBATCH --time=12:00:00
+#SBATCH --nodes=count 8
+#SBATCH --gres=gpu:1
+#SBATCH --time=12:00:00
 
 
 
