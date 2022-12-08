@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+#SBATCH --job-name=dltpy-training
+#SBATCH --output=slurm-runs/training.txt
+
 source .venv/bin/activate
 pip install -r requirements.txt
 
