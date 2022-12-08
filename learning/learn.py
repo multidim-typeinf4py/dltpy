@@ -445,7 +445,7 @@ if __name__ == "__main__":
                 # If the prediction is "other" - ignore the result
                 path = f"../input_datasets/{dataset}/ml_inputs/label_encoder.pkl"
                 encoder = pickle.load(open(path, "rb"))
-                print(encoder.classes_)
+                print(f"Encoder supports {len(encoder.classes_)} many types")
 
                 idx_of_other = encoder.transform(["other"])[0]
                 idx = (y_true != idx_of_other) & (y_pred[:, 0] != idx_of_other)
