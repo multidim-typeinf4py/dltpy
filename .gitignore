@@ -104,8 +104,10 @@ venv.bak/
 .mypy_cache/
 
 # project specific
-/projects
-/output
+projects
+output/
+
+
 
 _temp.csv
 .vscode/
