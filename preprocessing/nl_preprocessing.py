@@ -9,6 +9,7 @@ import nltk
 nltk.download('averaged_perceptron_tagger')
 nltk.download('stopwords')
 nltk.download('wordnet')
+nltk.download('omw-1.4')
 
 # Precompile often used regex
 first_cap_regex = re.compile('(.)([A-Z][a-z]+)')
