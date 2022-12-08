@@ -280,7 +280,13 @@ def train_loop(
     return losses
 
 
-def load_m1():
+def load_m1() -> tuple[nn.Module, dict]:
+    """
+    Model A - 
+    In the first model, we made use of two stacked LSTMs. Both LSTMs have a hidden size of 14. 
+    The first LSTM will feed its sequence fully into the second, whereas for the second LSTM we only use the output of the last unit and feed it into a fully connected linear layer. 
+    Softmax is applied to generate an approximation of the probability for each type. 
+    The model has a total of 37,288 parameters."""
     model_config = {
         "sequence_length": 55,
         "input_size": 14,  # The number of expected features in the input `x`
@@ -301,7 +307,13 @@ def load_m1():
     return model, model_config
 
 
-def load_m2():
+def load_m2() -> tuple[nn.Module, dict]:
+    """
+    Model B - 
+    In the second model, we take an approach similar to Model A: 
+    we feed the input vector into a Gated Recurrent Unit (GRU) and feed the output to a 
+    fully connected linear layer converting into the output types. 
+    The model has a total of 11,780 parameters."""
     model_config = {
         "sequence_length": 55,
         "input_size": 14,  # The number of expected features in the input `x`
@@ -322,7 +334,12 @@ def load_m2():
     return model, model_config
 
 
-def load_m3():
+def load_m3() -> tuple[nn.Module, dict]:
+    """Model C - 
+    The third model is the model architecture proposed by the authors of [5]. 
+    A single bidirectional LSTM with a hidden layer of size 256 is fed into a fully connected layer with output size 1000. 
+    Due to the size of this model and the time it took to train, the training consisted of only 25 epochs, compared to 100 epochs for the other three models. The model has a total of 404,456 parameters.
+    """
     model_config = {
         "sequence_length": 55,
         "input_size": 14,  # The number of expected features in the input `x`
@@ -343,7 +360,7 @@ def load_m3():
     return model, model_config
 
 
-def load_m4():
+def load_m4() -> tuple[nn.Module, dict]:
     model_config = {
         "sequence_length": 55,
         "input_size": 14,  # The number of expected features in the input `x`
@@ -393,7 +410,7 @@ if __name__ == "__main__":
     print(f"-- Using {device} for training.")
 
     top_n_pred = [1, 2, 3]
-    models = [load_m4]
+    models = [load_m1, load_m2, load_m3, load_m4]
     # datasets = ["2_cf_cr_optional", "3_cp_cf_cr_optional", "4_complete_without_return_expressions"]
     datasets = sys.argv[1:] if len(sys.argv) > 1 else []
     n_repetitions = 3
