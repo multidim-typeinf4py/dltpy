@@ -2,6 +2,7 @@
 
 #SBATCH --job-name=dltpy-training
 #SBATCH --output=slurm-runs/training.txt
+#SBATCH --gres=gpu:1
 
 source .venv/bin/activate
 pip install -r requirements.txt
