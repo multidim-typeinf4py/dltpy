@@ -3,7 +3,7 @@
 source .venv/bin/activate
 pip install -r requirements.txt
 
-python preprocessing/pipeline.py --limit 1
+python preprocessing/pipeline.py
 
 (cd input-preparation; python generate_df.py)
 (cd input-preparation; python df_to_vec.py)
