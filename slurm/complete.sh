@@ -6,7 +6,7 @@
 #SBATCH --mail-user=benjamin.sparks@stud.uni-heidelberg.de
 
 ## Resources
-#SBATCH --nodes=count 8
+#SBATCH --nodes=8
 #SBATCH --gres=gpu:1
 #SBATCH --time=12:00:00
 
